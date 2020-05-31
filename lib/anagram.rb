@@ -1,15 +1,25 @@
 # Your code goes here!
-class Anagram
+class Anagram 
+    attr_accessor :name
 
-  attr_accessor :word
+    def initialize(word)
+        @name = word
+    end 
 
-  def initialize(word)
-    @word = word
-  end
 
-  def match(word_array)
-    word_array.select do |word|
-      word.split("").sort == @word.split("").sort
+
+   def match(array)
+      array.select {|word| word.split("").sort == @name.split("").sort}
     end
-  end
-end
+end  
+
+listen = Anagram.new("listen")
+#listen.match(%w(enlists))
+listen.match(%w(enlists google inlets banana))
+
+
+#    def simple_anagram?(word)
+#         # self.sort.split(" ") == self.sort.split(" ")
+#         word.chars.sort == @anagram.chars.sort 
+#    end 
+
